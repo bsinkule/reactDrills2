@@ -1,21 +1,10 @@
 import React from 'react'
-import Skills from './Skills.js';
+import Card from './Card.js';
 
 let Profiles = (props) => {
-    let dinoList = props.list.map((lis, i) => {
-        return (
-        <li  key={i}>
-            <div className="profile-card">
-                <header className="profile-header">
-                    <img src={lis.image}/>
-                    <h2 onClick={() => props.selecting(i)}>{lis.name}</h2>
-                </header>
-                <section className="skills-container hidden">
-                    <Skills skills={lis.skills} />
-                </section>
-            </div>
-        </li>
-        )
+
+    let dinoList = props.list.map((listItem, i) => {
+        return <Card listItem={listItem} key={i} />
     })
 
     return (

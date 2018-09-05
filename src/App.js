@@ -19,18 +19,14 @@ class App extends Component {
         .then(response =>
             this.setState({ data: response})
         )
-}
-  selecting = (i) => {
-  const dino = document.querySelectorAll('.skills-container')
-  dino[i].classList.toggle('hidden')
   }
+  
   render() {
     return (
       <div className="App">
         <Header />
         <main>
-          <Profiles list={this.state.data}
-          selecting={this.selecting}/>
+          <Profiles list={this.state.data}/>
         </main>
         <Footer />
       </div>
